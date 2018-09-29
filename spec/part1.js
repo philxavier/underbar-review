@@ -58,7 +58,7 @@
       });
 
       it('should accept an index argument', function() {
-        expect(_.last([1, 2, 3], 2)).to.eql(FILL_ME_IN);
+        expect(_.last([1, 2, 3], 2)).to.eql([2, 3]);
       });
 
       it('should return empty array if zero is passed in as the index', function() {
@@ -66,7 +66,7 @@
       });
 
       it('should return all the array\'s elements if the index argument is larger than the length of the array', function() {
-        expect(_.last([1, 2, 3], 5)).to.eql(FILL_ME_IN);
+        expect(_.last([1, 2, 3], 5)).to.eql([1, 2, 3]);
       });
     });
 
@@ -424,7 +424,7 @@
       it('should not mutate the input array', function() {
         var input = [1, 2, 3, 4, 5];
         var result = _.reduce(input, function(memo, item) { return item; });
-        
+
         /*
          * Mutation of inputs should be avoided without good justification otherwise
          * as it can often lead to hard to find bugs and confusing code!
