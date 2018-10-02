@@ -81,7 +81,7 @@
     var results = [];
     for (let i = 0; i < collection.length; i ++) {
       if (test(collection[i])) {
-        results.push(collection[i]);
+        results.push(collection[i+1]);
       }
     }
     return results;
