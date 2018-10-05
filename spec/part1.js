@@ -81,11 +81,11 @@
     describe('each', function() {
 
       checkForNativeMethods(function() {
-        _.each([2, 3, 4], function(){});
+        _.each([2, 3, 4], function() {});
       });
 
       it('should not return anything', function() {
-        var returnValue = _.each([], function() { });
+        var returnValue = _.each([], function() {});
         expect(returnValue).to.not.exist;
       });
 
