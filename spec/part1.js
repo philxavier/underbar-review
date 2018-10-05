@@ -85,7 +85,7 @@
       });
 
       it('should not return anything', function() {
-        var returnValue = _.each([], function() {});
+        var returnValue = _.each([], function() { });
         expect(returnValue).to.not.exist;
       });
 
