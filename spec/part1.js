@@ -81,7 +81,7 @@
     describe('each', function() {
 
       checkForNativeMethods(function() {
-        _.each([2, 3, 4]);
+        _.each([2, 3, 4], function(){});
       });
 
       it('should not return anything', function() {
@@ -257,7 +257,7 @@
     });
 
     describe('filter', function() {
-
+      var isOdd = function(num) { return num % 2 !== 0; };
       checkForNativeMethods(function() {
         _.filter([1, 2, 3, 4, 5], isOdd);
       });
@@ -286,7 +286,7 @@
     });
 
     describe('reject', function() {
-
+      var isOdd = function(num) { return num % 2 !== 0; };
       checkForNativeMethods(function() {
         _.reject([1, 2, 3, 4, 5], isOdd);
       });
@@ -372,7 +372,9 @@
     });
 
     describe('map', function() {
-
+      var multiplyByTwo = function(x) {
+        return x * 2;
+      };
       checkForNativeMethods(function() {
         _.map([1, 2, 3], multiplyByTwo);
       });
