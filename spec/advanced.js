@@ -36,7 +36,7 @@
       var reverse = function() {
         return this.split('').reverse().join('');
       };
-      
+
       checkForNativeMethods(function() {
         _.invoke(['dog', 'cat'], reverse);
       });
@@ -173,7 +173,7 @@
     describe('throttle, when given a wait of 100ms', function() {
 
       checkForNativeMethods(function() {
-        _.throttle(function(){}, 1000);
+        _.throttle(function() {}, 1000);
       });
       var callback;
 

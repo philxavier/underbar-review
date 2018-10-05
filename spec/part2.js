@@ -21,7 +21,7 @@
 
       checkForNativeMethods(function() {
         _.contains([1, 2, 3], 2);
-      })
+      });
 
       it('should not mutate the input array', function() {
         var input = [1, 2, 3, 4, 5];
@@ -81,7 +81,7 @@
 
       checkForNativeMethods(function() {
         _.every([1, 2, 3], isEven);
-      })
+      });
       
 
       var isEven = function(num) {
@@ -131,7 +131,7 @@
 
       checkForNativeMethods(function() {
         _.some([1, 2, 3], isEven);
-      })
+      });
 
       var isEven = function(number) {
         return number % 2 === 0;
@@ -182,7 +182,7 @@
 
       checkForNativeMethods(function() {
         _.extend({ x: 'x' }, { a: 'a', x: 2 }, { a: 1 });
-      })
+      });
 
       it('returns the first argument', function() {
         var destination = {};
@@ -232,7 +232,7 @@
 
       checkForNativeMethods(function() {
         _.defaults({ x: 'x' }, { a: 'a', x: 2 }, { a: 1 });
-      })
+      });
 
       it('should return the original target object', function() {
         /*
@@ -363,7 +363,7 @@
 
       checkForNativeMethods(function() {
         _.once(function() {});
-      })
+      });
 
       it('should return a function', function() {
         // noop is short for `no-operation` and is pronounced `no-op`
@@ -408,7 +408,7 @@
 
       checkForNativeMethods(function() {
         _.memoize(function() {});
-      })
+      });
 
       var add, memoAdd;
 
@@ -471,8 +471,8 @@
     describe('delay', function() {
 
       checkForNativeMethods(function() {
-        _.delay(function() {},1000);
-      })
+        _.delay(function() {}, 1000);
+      });
 
       var callback;
 

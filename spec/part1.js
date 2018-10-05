@@ -34,7 +34,7 @@
 
       checkForNativeMethods(function() {
         _.first([2, 3, 4]);
-      })
+      });
 
       it('should be able to pull out the first element of an array', function() {
         expect(_.first([1, 2, 3])).to.equal(1);
@@ -59,7 +59,7 @@
 
       checkForNativeMethods(function() {
         _.last([2, 3, 4]);
-      })
+      });
 
       it('should pull the last element from an array', function() {
         expect(_.last([1, 2, 3])).to.equal(3);
@@ -82,7 +82,7 @@
 
       checkForNativeMethods(function() {
         _.each([2, 3, 4]);
-      })
+      });
 
       it('should not return anything', function() {
         var returnValue = _.each([], function() {});
@@ -230,7 +230,7 @@
 
       checkForNativeMethods(function() {
         _.indexOf([2, 3, 4], 3);
-      })
+      });
 
       it('should find 40 in the list', function() {
         var numbers = [10, 20, 30, 40, 50];
@@ -260,7 +260,7 @@
 
       checkForNativeMethods(function() {
         _.filter([1, 2, 3, 4, 5], isOdd);
-      })
+      });
 
       it('should return all even numbers in an array', function() {
         var isEven = function(num) { return num % 2 === 0; };
@@ -289,7 +289,7 @@
 
       checkForNativeMethods(function() {
         _.reject([1, 2, 3, 4, 5], isOdd);
-      })
+      });
 
       it('should reject all even numbers', function() {
         var isEven = function(num) { return num % 2 === 0; };
@@ -318,7 +318,7 @@
 
       checkForNativeMethods(function() {
         _.uniq([1, 2, 3, 4, 5]);
-      })
+      });
 
       it('should not mutate the input array', function() {
         var input = [1, 2, 3, 4, 5];
@@ -375,7 +375,7 @@
 
       checkForNativeMethods(function() {
         _.map([1, 2, 3], multiplyByTwo);
-      })
+      });
 
       it('should not mutate the input array', function() {
         var input = [1, 2, 3, 4, 5];
@@ -432,7 +432,7 @@
           { name: 'moe', age: 30 },
           { name: 'curly', age: 50 }
         ], 'name');
-      })
+      });
 
       it('should return values contained at a user-defined property', function() {
         var people = [
@@ -459,7 +459,7 @@
 
       checkForNativeMethods(function() {
         _.reduce([3, 2, 1], function(memo, item) { return item; });
-      }
+      });
     
 
       it('should return a value', function() {
