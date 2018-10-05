@@ -385,11 +385,11 @@
   // an array of people by their name.
   _.sortBy = function(collection, iterator) {
     if (typeof iterator === 'string') {
-      return collection.sort(function(a,b){
+      return collection.sort(function(a, b) {
         return a[iterator] - b[iterator];
       });
     }
-    return collection.sort(function(a,b){
+    return collection.sort(function(a, b) {
       return iterator(a) - iterator(b);
     });
   };
@@ -423,7 +423,7 @@
   // Hint: Use Array.isArray to check if something is an array
   _.flatten = function(nestedArray, result) {
     var result = [];
-    _.each(nestedArray, function(val){
+    _.each(nestedArray, function(val) {
       if (Array.isArray(val)) {
         result = result.concat(_.flatten(val));
       } else {
@@ -454,7 +454,7 @@
   // Only the elements present in just the first array will remain.
   _.difference = function(array) {
     var results = [];
-    var args = Array.from(arguments).slice(1)
+    var args = Array.from(arguments).slice(1);
     _.each(array, function(val) {
       var notIncludes = !_.some(args, function(arg) {
         return arg.includes(val);
@@ -473,9 +473,9 @@
   // Note: This is difficult! It may take a while to implement.
   _.throttle = function(func, wait) {
     var called = false;
-    function resetState() {
+    var resetState = function() {
       called = false;
-    }
+    };
     
     return function() {
       if (!called) {
@@ -483,6 +483,6 @@
         called = true;
         setTimeout(resetState, wait);
       }
-    }
+    };
   };
 }());

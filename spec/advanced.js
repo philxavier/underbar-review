@@ -17,7 +17,7 @@
 
   describe('Advanced', function() {
 
-    describe('invoke, when provided a function reference', function() {
+    describe('invoke, when provided a function reference', function() {    
 
       it('runs the input function on each item in the array, and returns a list of results', function() {
         var reverse = function() {
@@ -33,6 +33,14 @@
 
     describe('invoke, when provided a method name', function() {
 
+      var reverse = function() {
+        return this.split('').reverse().join('');
+      };
+      
+      checkForNativeMethods(function() {
+        _.invoke(['dog', 'cat'], reverse);
+      });
+
       it('runs the specified method on each item in the array, and returns a list of results', function() {
         var upperCasedStrings = _.invoke(['dog', 'cat'], 'toUpperCase');
 
@@ -41,6 +49,10 @@
     });
 
     describe('sortBy', function() {
+
+      checkForNativeMethods(function() {
+        _.sortBy(['dog', 'cat'], 'toUpperCase');
+      });
 
       it('should sort by age', function() {
         var people = [{name: 'curly', age: 50}, {name: 'moe', age: 30}];
@@ -93,6 +105,10 @@
 
     describe('flatten', function() {
 
+      checkForNativeMethods(function() {
+        _.flatten([1, [2], [3, [[[4]]]]]);
+      });
+
       it('can flatten nested arrays', function() {
         var nestedArray = [1, [2], [3, [[[4]]]]];
 
@@ -101,6 +117,10 @@
     });
 
     describe('zip', function() {
+
+      checkForNativeMethods(function() {
+        _.zip(['moe', 'larry', 'curly'], [30, 40, 50], [true] );
+      });
 
       it('should zip together arrays of different lengths', function() {
         var names = ['moe', 'larry', 'curly'];
@@ -117,6 +137,10 @@
 
     describe('intersection', function() {
 
+      checkForNativeMethods(function() {
+        _.intersection(['moe', 'larry', 'curly'], ['moe']);
+      });
+
       it('should take the set intersection of two arrays', function() {
         var stooges = ['moe', 'curly', 'larry'];
         var leaders = ['moe', 'groucho'];
@@ -127,6 +151,10 @@
     });
 
     describe('difference', function() {
+
+      checkForNativeMethods(function() {
+        _.difference(['moe', 'larry', 'curly'], ['moe']);
+      });
 
       it('should return the difference between two arrays', function() {
         var diff = _.difference([1, 2, 3], [2, 30, 40]);
@@ -143,6 +171,10 @@
     });
 
     describe('throttle, when given a wait of 100ms', function() {
+
+      checkForNativeMethods(function() {
+        _.throttle(function(){}, 1000);
+      });
       var callback;
 
       beforeEach(function() {
